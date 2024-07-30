@@ -47,7 +47,7 @@ def pad_and_convert_to_2d(arr):
     return two_d_array
 
 
-with open(os.path.join("1.txt"), "rb") as file:
+with open(os.path.join("input\\1.txt"), "rb") as file:
     content = file.read()
 
 print(content)
@@ -72,10 +72,10 @@ data = np.array(two_d_array, dtype=np.uint8)
 image = Image.fromarray(data, "RGB")
 
 # 保存图片到文件
-image.save("example_image.png")
+image.save("output\\1.png")
 
 # 从文件读取图片
-read_image = Image.open("example_image.png")
+read_image = Image.open("output\\1.png")
 
 new_data = np.array(read_image)
 
@@ -96,6 +96,6 @@ print(new_decimal_array)
 binary_data = bytes(new_decimal_array)
 print(binary_data)
 
-# 保存生成的txt文件
-with open("2.txt", "wb") as file:
+# 保存生成的file文件
+with open("restore\\1.txt", "wb") as file:
     file.write(binary_data)
